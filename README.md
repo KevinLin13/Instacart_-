@@ -38,5 +38,9 @@ kaggle 競賽網址:https://www.kaggle.com/competitions/instacart-market-basket-
 
 5. 最終根據每個訂單的條件，調整閾值以最大化 F1-score。
 
-# 六、推薦系統
+# 推薦系統
+
+
+
+https://github.com/KevinLin13/Instacart_Recommendation_System/assets/95026554/63732d2e-782d-4e3c-b331-2a5d52f3f995
 
