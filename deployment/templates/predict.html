@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  body, h1 {font-family: "標楷體", PMingLiU, "Raleway", sans-serif}
+  body, html {height: 100%}
+  .bgimg {
+      background-image: url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=3774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+  }
+  .h1 {
+    text-shadow: 2px 2px 5px red;
+  }
+  .title {
+      font-weight: bold;
+      font-size: 36px; /* 增大字體大小 */
+      color: white !important; /* 確保字體顏色為白色 */
+      border-width: 0 0 3px;
+      border-style: solid;
+  }
+  .textarea-font {
+      font-size: 24px;
+  }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+  }
+
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .title {
+      font-weight: bold;
+      font-size: 24px;
+      border-width: 0 0 3px;
+      border-style: solid;
+  }
+  .legend-title {
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      font-size: 20px;
+      border-style: solid;
+  }
+  .fieldset-prop {
+      border-color: #ffffff;
+      border-width: 3px;
+      padding: 10px;
+      background-color: #020202; /* 修改為不透明背景 */
+  }
+  .desc {
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      padding: 15px;
+      text-align: center;
+  }
+  .gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+  }
+  .gallery img {
+      width: 100%;
+      height: auto;
+  }
+</style>
+<body>
+
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display-topmiddle">
+      <h1 class="w3-xxlarge w3-animate-top title">Instacart 產品推薦系統</h1>
+      <hr class="w3-border-black" style="margin:auto;width:40%">
+    </div>
+    <div class="w3-display-container w3-display-middle">
+        <fieldset class="fieldset-prop">
+            <legend class="legend-title">根據您的近期購買</legend>
+            <div class="btn-toolbar">
+                {% for key, value in predictions['recommend'].items() %}
+                    <div class="gallery">
+                        {% if image_paths[value] %}
+                            <img src="{{ image_paths[value] }}" alt="{{ value }}">
+                        {% else %}
+                            <div class="desc">No Image Available</div>
+                        {% endif %}
+                        <div class="desc">{{ value }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </fieldset>
+    </div>
+</div>
+
+</body>
+</html>
